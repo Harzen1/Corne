@@ -7,6 +7,7 @@
 #include <behaviors.dtsi>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
+#include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/pointing.h>
 
 / {
@@ -16,32 +17,37 @@
         vol_up {
             bindings = <&kp C_VOLUME_UP>;
             key-positions = <16 17>;
+            layers = <0 6>;
         };
 
         vol_down {
             bindings = <&kp C_VOL_DN>;
             key-positions = <29 28>;
+            layers = <0 6>;
         };
 
         next_track {
             bindings = <&kp C_NEXT>;
             key-positions = <4 5>;
+            layers = <0 6>;
         };
 
         prev_track {
             bindings = <&kp C_PREVIOUS>;
             key-positions = <3 4>;
+            layers = <0 6>;
         };
 
         play_pause {
             bindings = <&kp C_PLAY_PAUSE>;
             key-positions = <3 4 5>;
+            layers = <0 6>;
         };
 
         mute {
             bindings = <&kp C_MUTE>;
-            key-positions = <>;
-            layers = <2>;
+            key-positions = <29 27 28>;
+            layers = <0 6>;
         };
 
         gaming_toggle {
@@ -54,6 +60,11 @@
             bindings = <&tog 6>;
             key-positions = <39 40 41>;
             layers = <0 6>;
+        };
+
+        reset {
+            bindings = <&sys_reset>;
+            key-positions = <39 40 41 38 37 36 36>;
         };
     };
 
@@ -102,27 +113,27 @@
         both {
             bindings = <
 &kp F1  &kp F2  &kp F3  &kp F4   &kp F5   &kp F6             &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4  &bt BT_CLR
-&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12            &none         &none         &none         &none         &none         &studio_unlock
-&none   &none   &none   &none    &none    &kp PRINTSCREEN    &none         &none         &none         &none         &none         &tog 4
+&kp F7  &kp F8  &kp F9  &kp F10  &kp F11  &kp F12            &out OUT_TOG  &none         &none         &none         &none         &studio_unlock
+&none   &none   &none   &none    &none    &kp PRINTSCREEN    &none         &none         &none         &none         &none         &none
                         &none    &none    &none              &none         &none         &none
             >;
         };
 
         gaming_default {
             bindings = <
-&kp ESC    &kp Q  &kp W  &kp E         &kp R  &kp T        &trans  &trans  &trans  &trans  &trans  &trans
-&kp LSHFT  &kp A  &kp S  &kp D         &kp F  &kp G        &trans  &trans  &trans  &trans  &trans  &trans
-&kp LCTRL  &kp Z  &kp X  &kp C         &kp V  &kp B        &trans  &trans  &trans  &trans  &trans  &trans
-                         &kp LEFT_ALT  &mo 5  &kp SPACE    &trans  &trans  &trans
+&kp ESC    &kp Q  &kp W  &kp E         &kp R  &kp T        &kp COMMA  &kp N7    &kp N8    &kp N9  &kp MINUS  &kp EQUAL
+&kp LSHFT  &kp A  &kp S  &kp D         &kp F  &kp G        &kp DOT    &kp N4    &kp N5    &kp N6  &kp LBKT   &kp RBKT
+&kp LCTRL  &kp Z  &kp X  &kp C         &kp V  &kp B        &kp N0     &kp N1    &kp N2    &kp N3  &kp SEMI   &kp APOS
+                         &kp LEFT_ALT  &mo 5  &kp SPACE    &kp ENTER  &kp BSPC  &kp FSLH
             >;
         };
 
         gaming_lower {
             bindings = <
-&kp N1   &kp N2  &kp N3  &kp N4  &kp N5  &kp N6    &trans  &trans  &trans  &trans  &trans  &trans
-&kp TAB  &kp H   &kp J   &kp K   &kp L   &kp M     &trans  &trans  &trans  &trans  &trans  &trans
-&kp N    &kp Y   &kp U   &kp I   &kp O   &kp P     &trans  &trans  &trans  &trans  &trans  &trans
-                         &kp F5  &trans  &kp F9    &trans  &trans  &trans
+&kp TAB   &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp NUMBER_4  &kp N5    &trans  &trans  &trans  &trans  &trans  &trans
+&kp BSLH  &kp H         &kp J         &kp K         &kp L         &kp P     &trans  &trans  &trans  &trans  &trans  &trans
+&kp Y     &kp U         &kp I         &kp O         &kp N         &kp M     &trans  &trans  &trans  &trans  &trans  &trans
+                                      &kp F5        &trans        &kp F9    &trans  &trans  &trans
             >;
         };
 
